@@ -73,6 +73,7 @@ subprojects{
         withJavadocJar()
     }
     repositories{
+        maven("https://maven.aliyun.com/repository/public")
         mavenCentral()
         maven("https://jitpack.io")
     }
