@@ -66,11 +66,11 @@ subprojects{
         archivesName.set(mod_id)
     }
     java{
-        toolchain{
-            languageVersion.set(JavaLanguageVersion.of(deps["java"]!!.toInt()))
-        }
         withSourcesJar()
         withJavadocJar()
+    }
+    tasks.withType<JavaCompile>().configureEach{
+        options.release=deps["java"]!!.toInt()
     }
     repositories{
         maven("https://maven.aliyun.com/repository/public")
@@ -91,7 +91,7 @@ subprojects{
         extendsFrom(shade)
     }
     dependencies{
-        add(shade.name,"com.github.Deiloproxide:VVVF-Simulator-Core:1.0.0"){
+        add(shade.name,"com.github.Deiloproxide:VVVF-Simulator-Core:${mod_version}"){
             isTransitive=false
         }
         add(shade.name,"com.github.wendykierp:JTransforms:3.2"){
