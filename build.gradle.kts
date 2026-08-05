@@ -91,17 +91,17 @@ subprojects{
         extendsFrom(shade)
     }
     dependencies{
-        add(shade.name,"com.github.Deiloproxide:VVVF-Simulator-Core:${mod_version}"){
+        shadow("com.github.Deiloproxide:VVVF-Simulator-Core:${mod_version}"){
             isTransitive=false
         }
-        add(shade.name,"com.github.wendykierp:JTransforms:3.2"){
+        shadow("com.github.wendykierp:JTransforms:3.2"){
             isTransitive=false
         }
-        add(shade.name,"org.visnow:JLargeArrays:1.7"){
+        shadow("org.visnow:JLargeArrays:1.7"){
             isTransitive=false
         }
-        add(shade.name,"org.apache.commons:commons-math3:3.6.1")
-        add(shade.name,"org.yaml:snakeyaml:2.6")
+        shadow("org.apache.commons:commons-math3:3.6.1")
+        shadow("org.yaml:snakeyaml:2.6")
     }
     tasks.named<ShadowJar>("shadowJar"){
         configurations=listOf(shade)

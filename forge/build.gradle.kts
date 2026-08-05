@@ -31,5 +31,5 @@ configurations.named("minecraftLibrary"){
     extendsFrom(shade)
 }
 dependencies{
-    add("minecraft","net.minecraftforge:forge:${minecraft_version}-${deps["platform"]}")
+    minecraft("net.minecraftforge:forge:${minecraft_version}-${deps["platform"]}")
 }

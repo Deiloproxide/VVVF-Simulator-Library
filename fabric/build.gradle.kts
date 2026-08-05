@@ -18,6 +18,6 @@ loom{
 dependencies{
     minecraft("com.mojang:minecraft:${minecraft_version}")
     mappings("net.fabricmc:yarn:${deps["map"]}:v2")
-    modImplementation("net.fabricmc:fabric-loader:${deps["platform"]}")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:${deps["api"]}")
+    implementation("net.fabricmc:fabric-loader:${deps["platform"]}")
+    implementation("net.fabricmc.fabric-api:fabric-api:${deps["api"]}")
 }
