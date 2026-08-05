@@ -68,6 +68,7 @@ subprojects{
     java{
         withSourcesJar()
         withJavadocJar()
+        toolchain.languageVersion=JavaLanguageVersion.of(deps["java"]!!)
     }
     tasks.withType<JavaCompile>().configureEach{
         options.release=deps["java"]!!.toInt()
