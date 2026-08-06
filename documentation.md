@@ -6,9 +6,10 @@ How to use VVVF Simulator Library in Minecraft mods.
 </div>
 
 ## Overview
-VVVF Simulator Library packages [VVVF Simulator Core] as a Minecraft mod so
-Forge, Fabric, and NeoForge projects can share the same VVVF calculation and
-audio-generation code at runtime.
+VVVF Simulator Library packages
+[VVVF Simulator Core](https://github.com/Deiloproxide/VVVF-Simulator-Core)
+as a Minecraft mod so Forge, Fabric, and NeoForge projects can share
+the same VVVF calculation and audio-generation code at runtime.
 - [For Users](#for-users)
 - [For Developers](#for-developers)
 ## For Users
@@ -25,7 +26,10 @@ environment for other mods.
 | NeoForge | \>=1.21.1 | 21           |
 ### Installation
 #### Prebuilt Artifact
-You can get this mod from [Modrinth], [CurseForge] and [GitHub Release].
+You can get this mod from
+[Modrinth](https://modrinth.com/mod/vvvf-simulator-library),
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/vvvf-simulator-library) and
+[GitHub Release](https://github.com/Deiloproxide/VVVF-Simulator-Library/releases).
 #### Build From Source
 The repository uses Java 21 to run Gradle. Platform jars are compiled for the
 Java version shown in the table.
@@ -69,7 +73,7 @@ dependencies{
 ### Loader Metadata
 Declare a dependency on this library in your own mod metadata so users get a
 clear error when the wrapper mod is missing.
-### Forge
+#### Forge
 ```toml
 [[dependencies."[mod_id]"]]
 modId="vvvf_simulator_lib"
@@ -78,7 +82,7 @@ versionRange="[mod_version_range]"
 ordering="NONE"
 side="CLIENT"
 ```
-### Fabric
+#### Fabric
 ```json
 {
   "depends":{
@@ -86,7 +90,7 @@ side="CLIENT"
   }
 }
 ```
-### NeoForge
+#### NeoForge
 ```toml
 [[dependencies."[mod_id]"]]
 modId="vvvf_simulator_lib"
@@ -119,7 +123,8 @@ public class YamlLoader{
     }
 }
 ```
-For more detailed usage, see the [core documentation].
+For more detailed usage, see the
+[core documentation](https://github.com/Deiloproxide/VVVF-Simulator-Core/blob/main/documentation.md).
 ### Notes
 The distributed platform jars include:
 - `com.github.wendykierp:JTransforms:3.2`
@@ -129,9 +134,3 @@ The distributed platform jars include:
 
 They are relocated under the library's shadow namespace. Do not
 import relocated packages from your own mod; use the public Core API instead.
-
-[VVVF Simulator Core]:https://github.com/Deiloproxide/VVVF-Simulator-Core
-[core documentation]:https://github.com/Deiloproxide/VVVF-Simulator-Core/blob/main/documentation.md
-[Modrinth]:https://modrinth.com/mod/vvvf-simulator-library
-[CurseForge]:https://www.curseforge.com/minecraft/mc-mods/vvvf-simulator-library
-[GitHub Release]:https://github.com/Deiloproxide/VVVF-Simulator-Library/releases

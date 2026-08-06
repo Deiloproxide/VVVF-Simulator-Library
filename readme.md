@@ -2,7 +2,7 @@
 
 ![icon](icon/icon.svg)
 # VVVF Simulator Library
-Wrapper of [VVVF Simulator Core] for Minecraft mods.
+Wrapper of [VVVF Simulator Core](https://github.com/Deiloproxide/VVVF-Simulator-Core) for Minecraft mods.
 </div>
 
 ![latest](https://img.shields.io/github/v/tag/Deiloproxide/VVVF-Simulator-Library?label=latest)
@@ -30,5 +30,3 @@ Contributions to this [project](https://github.com/Deiloproxide/VVVF-Simulator-L
 Please feel free to report issues, make comments, or submit a pull request.
 ## Contact us
 [![contact](icon/contact.svg)](https://github.com/Deiloproxide)
-
-[VVVF Simulator Core]: https://github.com/Deiloproxide/VVVF-Simulator-Core

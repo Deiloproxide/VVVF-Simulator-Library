@@ -25,11 +25,11 @@ subprojects{
     apply(plugin="maven-publish")
     val platform:String=name
     val minecraft_version:String=rootProject.property("version_${platform}").toString()
+    val mod_version:String=rootProject.property("version").toString()
+    val mod_group_id:String=rootProject.property("group").toString()
     val mod_id:String=rootProject.property("mod_id").toString()
     val mod_name:String=rootProject.property("mod_name").toString()
     val mod_license:String=rootProject.property("mod_license").toString()
-    val mod_version:String=rootProject.property("mod_version").toString()
-    val mod_group_id:String=rootProject.property("mod_group_id").toString()
     val mod_authors:String=rootProject.property("mod_authors").toString()
     val mod_description:String=rootProject.property("mod_description").toString()
     val shade:Configuration=configurations.create("shade")
