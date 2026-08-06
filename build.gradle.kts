@@ -106,7 +106,9 @@ subprojects{
     }
     tasks.named<ShadowJar>("shadowJar"){
         configurations=listOf(shade)
-        archiveFileName.set("${mod_id}-${platform}-${mod_version}.jar")
+        archiveBaseName=mod_id
+        archiveAppendix=platform
+        archiveVersion=mod_version
         relocate("org.jtransforms","${mod_group_id}.shadow.org.jtransforms")
         relocate("org.visnow.jlargearrays","${mod_group_id}.shadow.org.visnow.jlargearrays")
         relocate("org.apache.commons.math3","${mod_group_id}.shadow.org.apache.commons.math3")
@@ -127,7 +129,9 @@ subprojects{
     publishing{
         publications{
             create<MavenPublication>("mavenJava"){
-                from(components["java"])
+                artifact(tasks.named("shadowJar"))
+                artifact(tasks.named("sourcesJar"))
+                artifact(tasks.named("javadocJar"))
             }
         }
     }
