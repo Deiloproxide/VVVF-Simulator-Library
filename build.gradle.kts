@@ -107,7 +107,7 @@ subprojects{
         shadow("org.yaml:snakeyaml:2.6")
     }
     tasks.named<ShadowJar>("shadowJar"){
-        configurations=listOf(shade)
+        configurations=listOf(project.configurations.shadow.get())
         archiveBaseName=mod_id
         archiveAppendix=platform
         archiveVersion=mod_version
