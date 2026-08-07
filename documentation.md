@@ -100,15 +100,15 @@ ordering="NONE"
 side="CLIENT"
 ```
 ### Usage
-Import Core classes directly from the `loader` and `vvvfsimulator` packages.
+Import Core classes directly from the `vvvfsimulator` packages.
 ```java
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import loader.LoadContext;
-import loader.LoadException;
 import vvvfsimulator.data.vvvf.Manager;
 import vvvfsimulator.data.vvvf.Struct;
+import vvvfsimulator.loader.LoadContext;
+import vvvfsimulator.loader.LoadException;
 public class YamlLoader{
     public static void load(){
         Path yamlPath=Path.of("your_config.yaml");
