@@ -2,14 +2,9 @@ import net.minecraftforge.gradle.common.util.MinecraftExtension
 plugins{
     id("net.minecraftforge.gradle") version("6.0.54")
 }
-val platform:String=name
-val minecraft_version:String=rootProject.property("version_${platform}").toString()
 val mod_id:String=rootProject.property("mod_id").toString()
-val shade:Configuration=extra["shade"] as Configuration
-val deps:Map<String,String> =extra["deps"] as Map<String,String>
-repositories{
-    maven("https://maven.minecraftforge.net")
-}
+val minecraft_version:String=extra["minecraft_version"] as String
+val platform:String=extra["platform"] as String
 configure<MinecraftExtension>{
     mappings("official",minecraft_version)
     runs{
@@ -27,9 +22,6 @@ configure<MinecraftExtension>{
         }
     }
 }
-configurations.named("minecraftLibrary"){
-    extendsFrom(shade)
-}
 dependencies{
-    minecraft("net.minecraftforge:forge:${minecraft_version}-${deps["platform"]}")
+    minecraft("net.minecraftforge:forge:${minecraft_version}-${platform}")
 }
