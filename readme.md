@@ -7,7 +7,7 @@ Wrapper of [VVVF Simulator Core](https://github.com/Deiloproxide/VVVF-Simulator-
 
 ![latest](https://img.shields.io/github/v/tag/Deiloproxide/VVVF-Simulator-Library?label=latest)
 ![license](https://img.shields.io/github/license/Deiloproxide/VVVF-Simulator-Library?color=red)
-[![](https://jitpack.io/v/Deiloproxide/VVVF-Simulator-Library.svg)](https://jitpack.io/#Deiloproxide/VVVF-Simulator-Library)
+[![jitpack](https://jitpack.io/v/Deiloproxide/VVVF-Simulator-Library.svg)](https://jitpack.io/#Deiloproxide/VVVF-Simulator-Library)
 
 ![modrinth_version](https://img.shields.io/modrinth/game-versions/vvvf-simulator-library?color=green&logo=modrinth)
 ![curseforge_version](https://img.shields.io/curseforge/game-versions/1638825?color=orange&logo=curseforge)

@@ -114,6 +114,7 @@ subprojects{
         archiveAppendix=platform
         archiveVersion=mod_version
         archiveClassifier=""
+        minimize()
         relocate("org.jtransforms","${mod_group_id}.shadow.jtransforms")
         relocate("org.visnow.jlargearrays","${mod_group_id}.shadow.jlargearrays")
         relocate("org.apache.commons.math3","${mod_group_id}.shadow.math3")
