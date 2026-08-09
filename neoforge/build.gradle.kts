@@ -4,9 +4,9 @@ plugins{
 }
 val mod_id:String=rootProject.property("mod_id").toString()
 val minecraft_version:String=extra["minecraft_version"] as String
-val platform:String=extra["platform"] as String
+val platform_version:String=extra["platform_version"] as String
 configure<NeoForgeExtension>{
-    version=platform
+    version=platform_version
     runs{
         create("client"){
             client()

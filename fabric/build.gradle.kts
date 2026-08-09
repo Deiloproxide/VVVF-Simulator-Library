@@ -3,7 +3,7 @@ plugins{
 }
 val mod_id:String=rootProject.property("mod_id").toString()
 val minecraft_version:String=extra["minecraft_version"] as String
-val platform:String=extra["platform"] as String
+val platform_version:String=extra["platform_version"] as String
 val map:String=extra["map"] as String
 repositories{
     maven("https://maven.fabricmc.net")
@@ -16,5 +16,5 @@ loom{
 dependencies{
     minecraft("com.mojang:minecraft:${minecraft_version}")
     mappings("net.fabricmc:yarn:${map}:v2")
-    implementation("net.fabricmc:fabric-loader:${platform}")
+    implementation("net.fabricmc:fabric-loader:${platform_version}")
 }

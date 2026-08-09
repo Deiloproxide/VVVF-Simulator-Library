@@ -64,7 +64,7 @@ subprojects{
         "mod_description" to mod_description
     )
     extra["minecraft_version"]=minecraft_version
-    extra["platform"]=deps["platform"]
+    extra["platform_version"]=deps["platform"]
     extra["map"]=deps["map"]
     version=build_version
     group=build_group_id
