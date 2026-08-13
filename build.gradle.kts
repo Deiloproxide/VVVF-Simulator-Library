@@ -46,6 +46,9 @@ tasks.withType<Jar>().configureEach{
     archiveBaseName=mod_id
     archiveAppendix=core
 }
+tasks.named<Jar>("sourcesJar"){
+    include("**/*.java")
+}
 tasks.named<ShadowJar>("shadowJar"){
     enabled=false
 }
@@ -133,6 +136,9 @@ subprojects{
     }
     tasks.named<Jar>("jar"){
         enabled=false
+    }
+    tasks.named<Jar>("sourcesJar"){
+        include("**/*.java")
     }
     tasks.named<ShadowJar>("shadowJar"){
         configurations=listOf(project.configurations.shadow.get())
