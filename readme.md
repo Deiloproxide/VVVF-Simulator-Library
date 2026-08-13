@@ -2,7 +2,7 @@
 
 ![icon](icon/icon.svg)
 # VVVF Simulator Library
-Unofficial port of VVVF Simulator core functions for Java developers.
+Unofficial port of VVVF Simulator for Java developers.
 </div>
 
 ![latest](https://img.shields.io/github/v/tag/Deiloproxide/VVVF-Simulator-Library?label=latest)

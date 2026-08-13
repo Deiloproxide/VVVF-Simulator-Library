@@ -16,20 +16,13 @@ plugins{
     id("com.gradleup.shadow") version("9.4.1")
     id("maven-publish")
 }
-val mod_id:String=rootProject.property("mod_id").toString()
-val mod_version:String=property("mod_version").toString()
-val mod_group_id:String=property("mod_group_id").toString()
-val core_java_verison:String=property("core_java_version").toString()
-val arg_version:String=property("version").toString()
-val arg_group_id:String=property("group").toString()
-val build_version:String=if(arg_version==version) mod_version else arg_version
-val build_group_id:String=if(arg_group_id==group) mod_group_id else arg_group_id
+val core:String=name
+val mod_id:String=property("mod_id").toString()
+val core_java:String=property("core_java").toString()
 val versions_file:File=file("versions.json")
 val type:Type=object:TypeToken<Map<String,Map<String,Map<String,String>>>>(){}.type
 val versions:Map<String,Map<String,Map<String,String>>> =
     Gson().fromJson(versions_file.readText(),type)
-version=build_version
-group=build_group_id
 repositories{
     maven("https://maven.aliyun.com/repository/public")
     mavenCentral()
@@ -47,12 +40,11 @@ dependencies{
 java{
     withSourcesJar()
     withJavadocJar()
-    toolchain.languageVersion=JavaLanguageVersion.of(core_java_verison)
+    toolchain.languageVersion=JavaLanguageVersion.of(core_java)
 }
 tasks.withType<Jar>().configureEach{
     archiveBaseName=mod_id
-    archiveAppendix=rootProject.name
-    archiveVersion=mod_version
+    archiveAppendix=core
 }
 tasks.named<ShadowJar>("shadowJar"){
     enabled=false
@@ -93,7 +85,7 @@ subprojects{
         "mod_id" to mod_id,
         "mod_name" to mod_name,
         "mod_license" to mod_license,
-        "mod_version" to mod_version,
+        "mod_version" to version as String,
         "mod_authors" to mod_authors,
         "mod_description" to mod_description
     )
@@ -138,7 +130,6 @@ subprojects{
     tasks.withType<Jar>().configureEach{
         archiveBaseName=mod_id
         archiveAppendix=platform
-        archiveVersion=mod_version
     }
     tasks.named<Jar>("jar"){
         enabled=false
@@ -147,10 +138,10 @@ subprojects{
         configurations=listOf(project.configurations.shadow.get())
         archiveClassifier=""
         minimize()
-        relocate("org.jtransforms","${mod_group_id}.shadow.jtransforms")
-        relocate("org.visnow.jlargearrays","${mod_group_id}.shadow.jlargearrays")
-        relocate("org.apache.commons.math3","${mod_group_id}.shadow.math3")
-        relocate("org.yaml.snakeyaml","${mod_group_id}.shadow.snakeyaml")
+        relocate("org.jtransforms","vvvfsimulator.shadow.jtransforms")
+        relocate("org.visnow.jlargearrays","vvvfsimulator.shadow.jlargearrays")
+        relocate("org.apache.commons.math3","vvvfsimulator.shadow.math3")
+        relocate("org.yaml.snakeyaml","vvvfsimulator.shadow.snakeyaml")
     }
     publishing{
         publications{
