@@ -5,8 +5,7 @@
       "minecraft_range":"[1.20,)",
       "platform":"47.4.20",
       "platform_range":"[47,)",
-      "loader_range":"[47,)",
-      "map":"-"
+      "loader_range":"[47,)"
     }
   },
   "fabric":{
@@ -15,8 +14,7 @@
       "minecraft_range":"~1.20.1",
       "platform":"0.16.14",
       "platform_range":">=0.16.0",
-      "loader_range":">=0.16.0",
-      "map":"1.20.1+build.10"
+      "loader_range":">=0.16.0"
     }
   },
   "neoforge":{
@@ -25,8 +23,7 @@
       "minecraft_range":"[1.20,)",
       "platform":"21.1.228",
       "platform_range":"[20,)",
-      "loader_range":"[4,)",
-      "map":"-"
+      "loader_range":"[4,)"
     }
   }
 }

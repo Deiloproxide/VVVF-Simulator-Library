@@ -7,4 +7,5 @@ pluginManagement{
         maven("https://maven.neoforged.net/releases")
     }
 }
+rootProject.name="core"
 include("forge","fabric","neoforge")
